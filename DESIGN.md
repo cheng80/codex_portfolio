@@ -18,10 +18,10 @@
 
 최근 개발자 포트폴리오 레퍼런스와 포트폴리오 큐레이션 자료를 확인한 결과, 이 프로젝트에 적합한 방향은 다음과 같다.
 
-- 프로젝트 수가 많을수록 영상 배경, 3D 장식, 과한 인터랙션보다 **명확한 프로젝트 카드와 섹션 구조**가 유리하다.
+- 프로젝트 수가 많을수록 영상 배경, 3D 장식, 과한 인터랙션보다 **명확한 증거 보드, 매트릭스, 케이스 스터디 행 구조**가 유리하다.
 - 실무 개발자 포트폴리오는 3-6개의 대표 프로젝트를 깊게 보여주고, 나머지는 아카이브로 정리하는 패턴이 자주 권장된다.
 - 한국어 포트폴리오에서는 이름을 과하게 키운 브랜딩보다 경력 요약, 기술 스택, 앱 출시 링크, 회사 프로젝트를 슬라이드 단위로 빠르게 확인할 수 있는 구성이 더 자연스럽다.
-- 현재 패키지의 이전 contact sheet는 카드형 흐름과 섹션 분리 방식은 참고할 수 있지만, 최종 페이지를 이미지화하거나 QR/스크린샷 중심으로 고정하지 않는다.
+- 현재 패키지의 이전 contact sheet는 이미지 추출 기준으로만 참고한다. 카드형 흐름은 첫 5장에 사용하지 않는다.
 
 Reference sources:
 
@@ -39,7 +39,7 @@ Reference sources:
 
 - 차분하고 신뢰감 있는 문서형 레이아웃
 - 흰색에 가까운 배경과 얇은 선으로 정리된 섹션
-- 프로젝트별 포인트 컬러는 쓰되 좌측 바나 작은 배지 수준으로 제한
+- 프로젝트별 포인트 컬러는 쓰되 작은 상태 배지, 얇은 divider, matrix row accent 수준으로 제한
 - 이름보다 경력, 앱 출시, Unity 프로젝트, 하드웨어 연동 같은 검증 가능한 정보를 앞세움
 - AI 생성 이미지나 장식 일러스트 없이 텍스트, 선, 배지, 아이콘만으로 구성
 - 카드뉴스처럼 반복되는 큰 박스, 강한 그림자, 과한 둥근 모서리를 피함
@@ -118,27 +118,36 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sa
 권장 섹션 순서:
 
 1. Hero / Cover
-2. Career Summary / Tech Stack
-3. App Projects Overview
-4. TagDo
-5. HabitCell
-6. GlucoInsight
-7. SyncFlow
-8. 순서대로 탭탭
-9. Company Works - 그로비교육
-10. Company Works - 천재교육 / 천재교과서
-11. Hardware / IoT
+2. Released Apps Evidence Board
+3. Capability Matrix
+4. AI/RAG + Current Flutter Expansion
+5. Career Proof / Production Reliability Ledger
+6. TagDo
+7. HabitCell
+8. GlucoInsight
+9. SyncFlow
+10. Unity Education Content
+11. Hardware / IoT / Rummi Poker Evidence
 12. Archive / Links
+
+Slide count rule:
+
+- 권장 범위는 14-18장이다.
+- 최대 20장까지 허용한다.
+- 20장을 넘으면 appendix 또는 별도 링크 문서로 분리한다.
+- 정확한 정보와 프로젝트 증거가 중요한 포트폴리오이므로, 12장에 억지로 압축하지 않는다.
+- 한 장에 내용을 과밀하게 넣어 문구를 왜곡하는 것보다 장을 늘리는 편을 우선한다.
 
 레이아웃 규칙:
 
 - 각 슬라이드는 16:9 비율을 유지한다.
 - 화면 기준 최대 폭은 1440-1600px로 두고, 한 장 안에서 모든 내용이 들어가게 한다.
 - Hero는 좌측 신원/연락처, 우측 요약 지표 구조로 둔다.
-- 앱 프로젝트는 개요 슬라이드와 개별 프로젝트 슬라이드로 분리한다.
+- 앱 프로젝트는 release evidence board와 개별 프로젝트 슬라이드로 분리한다.
 - 회사 프로젝트는 회사별로 슬라이드를 나눠 한 장에 너무 많은 카드가 쌓이지 않게 한다.
-- Archive와 Links는 마지막 슬라이드에 압축한다.
+- Archive와 Links는 마지막 슬라이드에 압축하되, 14-18장 범위에서는 프로젝트 증거를 무리하게 줄이지 않는다.
 - 모바일 반응형은 고려하지 않는다. 단, 브라우저 폭이 작을 때 전체 슬라이드가 축소되어 보이는 것은 허용한다.
+- 첫 5장에서 장식용 카드 그리드는 금지한다. Slide 2는 release evidence board, Slide 3은 proof matrix, Slide 4는 backend pipeline + Flutter evidence split, Slide 5는 production reliability ledger로 만든다.
 
 ## 7. Component Styling
 
@@ -151,7 +160,7 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sa
 ### Hero
 
 - 좌측에는 이름, 한 줄 소개, 연락처를 둔다.
-- 우측에는 숫자형 요약 카드 4개를 둔다.
+- 우측에는 숫자형 proof strip을 둔다. 독립 카드 4개처럼 보이지 않게 선과 열 정렬 중심으로 처리한다.
 - 히어로 이미지나 인물 일러스트는 사용하지 않는다.
 
 ### Containers / Rows
@@ -159,9 +168,86 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sa
 - 기본 섹션은 카드가 아니라 넓은 문서 행으로 둔다.
 - 모서리는 0-8px 범위로 낮춘다.
 - 그림자는 기본적으로 사용하지 않는다.
-- 카드 구분은 border-top, 얇은 divider, grid alignment로 해결한다.
-- 반복 프로젝트는 `case-study row`처럼 제목/요약/기능/링크 열을 맞춘다.
+- 구분은 border-top, 얇은 divider, grid alignment로 해결한다.
+- 반복 프로젝트는 `case-study row`, `evidence board`, `proof matrix`, `production ledger`처럼 제목/요약/근거/링크 열을 맞춘다.
 - 큰 흰색 박스가 연속적으로 쌓여 카드뉴스처럼 보이면 실패로 본다.
+
+### First-Five Components
+
+The first five slides use named document components instead of generic cards.
+
+#### `release-evidence-board`
+
+Purpose: prove recent shipping and release-readiness without turning apps into promotional cards.
+
+Structure:
+
+- left rail: app name, status label, store/link evidence
+- center: one-line product purpose and what this proves
+- right rail: compact stack icons and one PDF screenshot strip where available
+
+Rules:
+
+- Do not use four equal cards.
+- Do not center-align the whole board.
+- Status labels must be explicit: `출시`, `심사중`, `출시 준비중`, `GitHub`, `Playable Web`.
+- Screenshots support the evidence; they must not become decorative hero images.
+
+#### `capability-matrix`
+
+Purpose: connect skills to concrete project and career evidence. This is slide 3 and the most important slide.
+
+Columns:
+
+```text
+Capability | Tech Evidence | Project / Career Proof | Hiring Signal
+```
+
+Rows:
+
+```text
+Flutter App | Backend / API | AI, ML, RAG | Unity Content | IoT / Hardware
+```
+
+Rules:
+
+- Every row must include proof. A technology without project or career proof does not belong in the matrix.
+- Use technical icons as row evidence, not as decoration in colored circles.
+- Avoid long paragraphs inside cells. One strong phrase per cell is preferred.
+- The hiring signal column should be the most readable column for non-engineer reviewers.
+
+#### `pipeline-evidence-split`
+
+Purpose: make AI/RAG credible and connect it to current Flutter work.
+
+Structure:
+
+- left: RAG/backend pipeline (`Flutter client → FastAPI → TourAPI/Chroma/Ollama/fallback`)
+- right: current Flutter expansion evidence (`chatbot_rag_app`, Rummi Poker, GlucoInsight)
+- bottom: source-type labels (`Project evidence`, `Current Flutter expansion`, `Education / training evidence`)
+
+Rules:
+
+- Do not present AI/RAG as years of production AI experience.
+- Label `chatbot_rag_app` as Flutter client evidence and `chatbot_rag` as backend/RAG evidence.
+- Label Rummi Poker as Flutter/Flame + BIC submission + playable web build evidence.
+- Avoid a generic three-column feature grid.
+
+#### `production-ledger`
+
+Purpose: reframe long career as production reliability.
+
+Structure:
+
+- rows by company/period
+- columns for production scope, role evidence, and reliability signal
+- one compact side metric area for `80+ apps`, `team setup`, `live service`, `education content`
+
+Rules:
+
+- Do not lead with age or seniority.
+- Do not turn this into a chronological resume table only.
+- The reader should leave with "this person can repeatedly ship and operate client/content products."
 
 ### Buttons / Links
 
@@ -179,13 +265,28 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sa
 
 모든 데이터의 원천은 원본 PDF다.
 
+Information accuracy is a hard gate. Visual quality must never be achieved by inventing project facts, metrics, dates, statuses, URLs, awards, roles, or technology usage. Prior generated HTML may contain design-driven placeholder or fabricated content; treat the source PDFs, latest resume, and explicitly provided supplemental links as authoritative over existing HTML.
+
+Before writing or keeping any portfolio claim, classify it as one of:
+
+```text
+PDF source
+Latest resume source
+User-provided supplemental source
+Derived phrasing from source facts
+Unknown / remove
+```
+
+Claims classified as `Unknown / remove` must not appear in the deck.
+
 PDF에서 확인된 값:
 
 - 이름: 김택권
 - 전화번호: 010-2626-2131
 - 이메일: cheng80@naver.com
 - GitHub: https://github.com/cheng80
-- 총 모바일 개발 경력: 14년 이상
+- 총 모바일 개발 경력: 14년 이상 (기존 포트폴리오 PDF 기준)
+- 총 경력: 13년 4개월 (최신 이력서 20260530 기준, 현재 요약 표기 우선)
 - 그로비교육: 2022.04 - 2024.02
 - 천재교육 / 천재교과서: 2016.01 - 2022.04
 - 기타 경력: 2008 - 2016
@@ -193,10 +294,17 @@ PDF에서 확인된 값:
 문구 작성 규칙:
 
 - PDF에 없는 성과 수치, 다운로드 수, 매출, 테스트 결과를 만들지 않는다.
+- 기존 HTML에 있는 문구라도 PDF, 최신 이력서, 또는 사용자 제공 보충 링크로 확인되지 않으면 유지하지 않는다.
+- `ChatGPT가 디자인을 위해 넣은 듯한` 통계, 수식어, 가짜 성과, 일반화된 프로젝트 설명은 제거한다.
 - PDF에 있는 오탈자는 사용자에게 더 자연스럽게 보이도록 최소 교정할 수 있지만, 의미는 바꾸지 않는다.
 - HabitCell의 PDF 제목에는 TagDo 설명과 혼선이 있으므로, 기능 설명과 목차에 있는 `일별 기록, 히트맵, Streak 분석`을 우선한다.
 - GlucoInsight와 SyncFlow의 출시 상태는 PDF 표현 그대로 `출시 준비중`, `심사중` 범위에서만 표시한다.
 - 외부 링크는 PDF에 있는 URL만 사용한다.
+- 보충 최신 근거로 사용 가능한 링크는 사용자 제공으로 별도 표시한다:
+  - `https://github.com/cheng80/rummipoker`
+  - `https://bicfest.org/enroll/view/3405`
+  - `https://cheng80.myqnapcloud.com/rummipoker/`
+  - `https://github.com/cheng80/chatbot_rag_app`
 
 ## 9. Responsive & Print Rules
 
@@ -205,6 +313,10 @@ PDF에서 확인된 값:
 - 반응형 레이아웃 전환은 만들지 않는다.
 - 모든 슬라이드는 동일한 16:9 비율과 내부 여백 체계를 유지한다.
 - 작은 화면에서는 브라우저 확대/축소 또는 CSS `aspect-ratio`에 의해 축소된 한 장으로 보이면 된다.
+- 접근성과 화면 대응 기준은 모바일 웹 반응형보다 16:9/PPT 출력 안정성을 우선한다.
+- 텍스트는 슬라이드 안에서 잘리지 않아야 하며, 특히 Slide 3 `capability-matrix` 셀은 한 셀당 한 개의 강한 문장으로 제한한다.
+- 기술 아이콘은 의미 전달용이면 구체적인 `alt`를 제공하고, 장식용이면 빈 `alt`로 처리한다.
+- 외부 링크는 브라우저에서 클릭 가능해야 하며, 제출/출력 문서에서는 링크 목적이 텍스트만으로도 이해되어야 한다.
 
 Print:
 
@@ -219,6 +331,13 @@ Print:
 - `web-starter/index.html`은 정적 HTML 본문만 담당한다.
 - `web-starter/styles.css`는 모든 시각 스타일과 print CSS를 담당한다.
 - React, Vite, TypeScript는 이번 정적 산출물의 필수 조건이 아니다.
+- HTML을 편집 가능한 원본으로 둔다. PowerPoint 안에서 텍스트를 직접 편집하는 editable PPTX는 목표가 아니다.
+- 따라서 Huashu Design의 editable PPTX 전용 제약(`960pt × 540pt`, 모든 텍스트 p/h 태그 강제, gradient 금지 등)은 적용하지 않는다.
+- PDF나 PPT 변환이 필요하면 HTML 원본에서 스냅샷/출력물로 파생한다.
+- Huashu Design의 deck workflow를 적용해 전체 12장을 바로 재구성하지 않는다.
+- 먼저 `Slide 1 Cover`와 `Slide 3 Capability Matrix`를 showcase로 구현하고 브라우저 스크린샷으로 visual grammar를 검증한다.
+- Slide 1은 포지셔닝, 톤, proof strip의 기준이 된다.
+- Slide 3은 카드 뉴스 느낌을 제거하고 proof matrix가 제대로 작동하는지 판단하는 기준이 된다.
 - 이미지 사용은 앱 스크린샷, QR, 외부 로고가 확보될 때만 허용한다.
 - 현재 단계에서는 PDF에서 추출한 기존 앱/회사 프로젝트 이미지를 재사용한다.
 - 기술 스택 아이콘은 이모지가 아니라 `icoziv` SVG 기술 아이콘을 로컬 저장해 사용한다.

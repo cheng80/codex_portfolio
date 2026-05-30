@@ -13,6 +13,21 @@ Primary sources:
 
 The older `20250901` resume is not used for direction decisions.
 
+Supplemental latest user-provided sources:
+
+- `https://github.com/cheng80/rummipoker`
+  - Flutter/Flame 기반 보드형 덱빌딩 로그라이트.
+  - User-provided note: BIC(부산 인디 커넥트 페스티벌) 출품.
+  - User-provided BIC evidence link: `https://bicfest.org/enroll/view/3405`
+  - Playable web build: `https://cheng80.myqnapcloud.com/rummipoker/`
+  - GitHub README confirms Flutter/Flame game scope and closed competition/submission evidence folders.
+- `https://github.com/cheng80/chatbot_rag_app`
+  - `chatbot_rag` FastAPI backend의 `/tourism/chat` API를 사용하는 Flutter 클라이언트.
+  - User-provided note: Flutter 앱으로도 제작되어 출시 준비 중.
+  - GitHub README confirms Flutter client scope, TourAPI/Chroma/Ollama/fallback Markdown backend contract, and release-facing UI separation.
+
+These two repositories are newer supplemental evidence. They may strengthen currentness in the first five slides, but should be labeled as GitHub/user-provided evidence rather than original PDF facts unless the source PDFs are later updated.
+
 ## Problem Statement
 
 The current portfolio must stop reading like a general archive of past work. It should become a hiring document for a specific market signal:
@@ -59,6 +74,69 @@ The first five slides carry the hiring narrative. Later slides become evidence a
 
 ## First Five Slides
 
+Design review decision:
+
+The first five slides are locked as a proof-led hiring narrative. The deck must not begin with a career-first sequence. Career history appears on slide 5 as production credibility after the reader has already seen current relevance, released apps, and the capability map.
+
+Information architecture:
+
+```text
+Slide 1 Cover
+└─ Current position: Flutter commercial app + AI/RAG expanding mobile developer
+   └─ Proof strip: released apps / FastAPI, ML, RAG / Unity education content / 80+ app operations
+
+Slide 2 Released Apps
+└─ TagDo / HabitCell / GlucoInsight / SyncFlow
+   └─ Status + technology + screenshot + "what this proves"
+
+Slide 3 Capability Matrix
+└─ Capability | Tech Evidence | Project Proof | Hiring Signal
+   └─ Flutter / Backend API / AI, ML, RAG / Unity Content / IoT
+
+Slide 4 AI/RAG Focus
+└─ chatbot_rag + FastAPI + ChromaDB + TourAPI + Ollama + ML/Transformer education
+
+Slide 5 Career Proof
+└─ Grovy / Chunjae / 80+ apps / team setup
+   └─ Long career reframed as production reliability, not seniority-first identity
+```
+
+State and ambiguity handling:
+
+Ambiguous source-data states must be shown with explicit labels instead of being hidden inside stronger marketing copy. This protects trust and keeps the portfolio grounded in the source PDFs.
+
+```text
+FEATURE / SLIDE        | MISSING OR AMBIGUOUS DATA   | VISUAL HANDLING
+-----------------------|-----------------------------|-------------------------------
+Released Apps          | release status differs       | 출시 / 심사중 / 출시 준비중 labels
+Capability Matrix      | technology without proof     | require project or career proof in same row
+AI/RAG Focus           | education vs project proof   | 프로젝트 근거 / 교육·학습 근거 labels
+Career Proof           | old career may dominate      | label as production reliability evidence
+Project Detail Slides  | app links or status unclear  | show source-safe muted status badge
+```
+
+Do not resolve `Flutter apps 3종` vs `4종`, `GlucoInsight` status, or `SyncFlow` release status with stronger copy unless the source documents support it. Use precise status labels.
+
+Anti-card-news design decision:
+
+Decorative card grids are banned from the first five slides. The first five slides should read like a professional proof document, not social card news or a generic SaaS landing page.
+
+```text
+Slide 2 Released Apps
+└─ release evidence board, not four equal promo cards
+
+Slide 3 Capability Matrix
+└─ proof matrix / evidence map, not a skill-card grid
+
+Slide 4 AI/RAG + Current Flutter Expansion
+└─ backend pipeline + Flutter product evidence split, not a three-column feature grid
+
+Slide 5 Career Proof
+└─ production reliability ledger, not chronological resume cards
+```
+
+Cards may still appear later for repeated appendix items, but they must be low-radius, border-only, content-earned, and never the dominant first-five-slide rhythm.
+
 ### 1. Cover
 
 Purpose: establish current positioning quickly.
@@ -87,12 +165,23 @@ What it should avoid:
 
 Purpose: prove recent shipping behavior before asking the reader to care about skills.
 
+Scope decision:
+
+Slide 2 contains only the original four app projects from the portfolio PDF:
+
 Apps:
 
 - TagDo
 - HabitCell
 - GlucoInsight
 - SyncFlow
+
+Supplemental current Flutter evidence to place carefully:
+
+- Rummi Poker: Flutter/Flame game, BIC submission note, useful for proving modern Flutter game/client work.
+- Chatbot RAG App: Flutter client for RAG tourism chatbot, useful for proving AI/RAG is not backend-only.
+
+These supplemental projects do not appear in slide 2. They belong to slide 4 as current Flutter expansion evidence. This keeps slide 2 focused on release/release-ready app evidence and prevents project-card overload.
 
 What it should show:
 
@@ -128,17 +217,30 @@ Design rule:
 
 ### 4. AI/RAG Focus
 
-Purpose: make AI/RAG currentness explicit and credible.
+Purpose: make AI/RAG currentness explicit and credible, while also showing that the candidate is still actively building Flutter products beyond the original PDF apps.
+
+Design review decision:
+
+Slide 4 should become `AI/RAG + Current Flutter Expansion`, not a backend-only AI slide. This prevents AI/RAG from feeling abstract and gives the first five slides stronger currentness.
+
+Composition decision:
+
+`chatbot_rag` and `chatbot_rag_app` are the primary story on slide 4. Rummi Poker is a supporting proof point for current Flutter/Flame expansion, not a co-equal second hero. The slide should read as AI/RAG-first with a current Flutter evidence rail.
 
 Primary content:
 
 - `chatbot_rag`
+- `chatbot_rag_app`
 - TourAPI live lookup
 - ChromaDB RAG fallback
 - SQLite / Markdown cache
 - Ollama local LLM experiment
 - FastAPI API structure
 - Evaluation question set, if shown without exaggerating test results
+- Rummi Poker
+- Flutter/Flame game runtime
+- BIC submission evidence
+- playable web build
 
 Secondary content:
 
@@ -156,6 +258,14 @@ Tone rule:
 
 - Do not claim AI/RAG production work unless the source documents support it.
 - Present it as "current expansion and project evidence," not as years of AI production experience.
+- Label source type clearly:
+  - `Project evidence`: `chatbot_rag`, `chatbot_rag_app`, GlucoInsight
+  - `Current Flutter expansion`: Rummi Poker, Flutter/Flame, playable web build
+  - `Education / training evidence`: ML, Transformer, FastAPI, data processing curriculum
+- Layout guidance:
+  - primary area: `chatbot_rag` backend pipeline and Flutter client
+  - secondary rail: GlucoInsight ML evidence and Rummi Poker Flutter/Flame evidence
+  - footer labels: `Project`, `Flutter client`, `Playable web`, `BIC submission`, `Education`
 
 ### 5. Career Proof
 
@@ -194,6 +304,10 @@ Avoid:
 
 Slides 6-12 should become evidence after the first five slides have already made the case.
 
+Updated slide count decision:
+
+The final portfolio does not need to be compressed to 12 slides. A 14-18 slide deck is preferred, and up to 20 slides is acceptable. Information accuracy and readable evidence are more important than a shorter page count.
+
 Recommended sequence:
 
 6. TagDo detail  
@@ -205,6 +319,22 @@ Recommended sequence:
 12. Archive / links / GitHub / screenshots
 
 Alternative: keep `순서대로 TapTap` as a compact evidence block in slide 11 or 12 unless there is a specific game-client role target.
+
+Updated sequence target:
+
+6. TagDo detail  
+7. HabitCell detail  
+8. GlucoInsight detail  
+9. SyncFlow detail  
+10. Rummi Poker / Flutter Flame current game evidence  
+11. 순서대로 탭탭 / Flutter Flame compact evidence  
+12. Grovy Education Unity content  
+13. Chunjae Education / Chunjae Textbook Unity content  
+14. Hardware / IoT integration  
+15. Archive / legacy client work  
+16. Links / GitHub / source evidence
+
+If the later implementation needs more breathing room, split Grovy and Chunjae into separate detail pages or split archive and links. Keep the total at 20 or fewer.
 
 ## Content Hierarchy Rules
 
@@ -227,6 +357,20 @@ Use the documents this way:
 2. Existing portfolio PDF: project details, screenshots, store links, GitHub links, visual evidence.
 3. Current HTML/CSS deck: implementation base.
 4. Earlier generated JSON and instructions: helper material only.
+
+Accuracy gate:
+
+Portfolio information accuracy is more important than visual polish. Existing HTML is not a source of truth because previous design-driven drafts may contain fabricated or placeholder claims. Before a claim appears in the deck, classify it as:
+
+```text
+PDF source
+Latest resume source
+User-provided supplemental source
+Derived phrasing from source facts
+Unknown / remove
+```
+
+Any claim classified as `Unknown / remove` must be removed. Do not invent metrics, awards, user counts, download counts, business impact, test results, AI production experience, or release states for design balance.
 
 ## Open Questions
 
@@ -252,15 +396,89 @@ The redesigned portfolio is successful if:
 ## Next Steps
 
 1. Update `DESIGN.md` to reflect this hiring narrative, not just the visual system.
-2. Rewrite the first five slides in `web-starter/index.html`.
-3. Add a proper Capability Matrix slide as slide 3.
-4. Add an AI/RAG Focus slide as slide 4.
-5. Move career proof to slide 5.
-6. Re-check all project status labels against the latest resume and original portfolio PDF.
-7. After the portfolio deck is stable, revisit the resume and add AI/RAG wording there separately.
+2. Audit current HTML claims against source documents and remove any unverified or design-generated content.
+3. Build a two-slide showcase first:
+   - Slide 1 Cover
+   - Slide 3 Capability Matrix
+4. Verify the showcase in browser screenshots before rebuilding the full deck.
+5. After the showcase grammar is accepted, rewrite the first five slides in `web-starter/index.html`.
+6. Add a proper Capability Matrix slide as slide 3.
+7. Add `AI/RAG + Current Flutter Expansion` as slide 4.
+8. Move career proof to slide 5.
+9. Re-check all project status labels against the latest resume, original portfolio PDF, and user-provided supplemental links.
+10. After the portfolio deck is stable, revisit the resume and add AI/RAG wording there separately.
+
+Implementation sequencing decision:
+
+Do not rebuild the whole deck in one pass. Following Huashu Design deck workflow, establish the visual grammar with the two most important and structurally different slides first. Slide 1 proves the positioning and tone. Slide 3 proves whether the deck can avoid card-news layout and communicate capability through a professional evidence matrix. After that, expand toward a 14-18 slide evidence deck instead of forcing a 12-slide limit.
 
 ## What I Noticed
 
 - You rejected a "career-first" structure because the current hiring market can read long experience as a burden. That is the right instinct for this deck.
 - You kept Flutter as the resume-aligned anchor but asked for AI/RAG to be stronger in the portfolio. That creates a clear two-step strategy: portfolio first, resume revision later.
 - You identified slide 3 as the key slide. That should prevent the deck from becoming a sequence of project cards.
+
+## Implementation Tasks
+
+Synthesized from `/plan-design-review`. Each task derives from a specific finding above.
+
+- [ ] **T1 (P1, human: ~2h / CC: ~20min)** — Slide 1 Cover — Build proof-led cover showcase
+  - Surfaced by: Pass 1 — first five slides are locked as proof-led hiring narrative.
+  - Files: `web-starter/index.html`, `web-starter/styles.css`
+  - Verify: browser screenshot confirms current positioning, proof strip, and no career-first hierarchy.
+- [ ] **T2 (P1, human: ~3h / CC: ~30min)** — Slide 3 Capability Matrix — Build capability proof matrix showcase
+  - Surfaced by: Pass 1 and Pass 4 — slide 3 must be proof matrix, not skill-card grid.
+  - Files: `web-starter/index.html`, `web-starter/styles.css`
+  - Verify: matrix connects capability, tech evidence, project/career proof, and hiring signal.
+- [ ] **T3 (P2, human: ~2h / CC: ~20min)** — Slide 2 Released Apps — Convert app cards into release evidence board
+  - Surfaced by: Pass 4 and D9 — decorative card grids banned; slide 2 contains original four app projects only.
+  - Files: `web-starter/index.html`, `web-starter/styles.css`
+  - Verify: TagDo, HabitCell, GlucoInsight, SyncFlow appear as release evidence, not promo cards.
+- [ ] **T4 (P2, human: ~2h / CC: ~25min)** — Slide 4 AI/RAG — Design AI/RAG-first pipeline with Flutter evidence rail
+  - Surfaced by: D8 — `chatbot_rag` and `chatbot_rag_app` are primary; Rummi Poker supports current Flutter expansion.
+  - Files: `web-starter/index.html`, `web-starter/styles.css`
+  - Verify: slide reads AI/RAG-first, with Rummi Poker as secondary Flutter/Flame proof.
+- [ ] **T5 (P2, human: ~2h / CC: ~20min)** — Slide 5 Career Proof — Reframe career as production reliability ledger
+  - Surfaced by: Pass 3 — long career should read as production reliability, not seniority-first identity.
+  - Files: `web-starter/index.html`, `web-starter/styles.css`
+  - Verify: Grovy, Chunjae, 80+ apps, team setup, and live service appear as reliability evidence.
+- [ ] **T6 (P1, human: ~2h / CC: ~20min)** — Information Accuracy — Audit existing HTML claims before visual implementation
+  - Surfaced by: User correction — portfolio accuracy is more important than design polish, and previous ChatGPT-generated HTML may contain fabricated content.
+  - Files: `web-starter/index.html`, `docs/김택권 포트폴리오.pdf`, `docs/김택권_잡코리아 이력서_20260530.pdf`
+  - Verify: every visible claim is tagged as PDF source, latest resume source, user-provided source, or derived phrasing.
+
+JSONL artifact:
+
+```text
+/Users/cheng80/.gstack/projects/codex_portfolio/tasks-design-review-20260531-034300.jsonl
+```
+
+## NOT in scope
+
+- Editable PPTX export: HTML is the editable source, so PowerPoint-native text editing is not required.
+- Forced 12-slide compression: 14-18 slides is preferred, up to 20 is acceptable.
+- Resume rewrite: AI/RAG resume alignment is a later separate task.
+- Claims beyond source evidence: BIC is stated as submission evidence only, not selection or award.
+
+## What already exists
+
+- `DESIGN.md`: 16:9 static HTML deck rules, first-five component rules, output/export stance.
+- `web-starter/index.html`: current static deck implementation base.
+- `web-starter/styles.css`: current slide styling base.
+- `web-starter/assets/pdf/`: extracted source PDF images.
+- `web-starter/assets/icons/`: local icoziv SVG technical stack icons.
+- `docs/CODEX_SCREENSHOT_REQUESTS.md`: handoff prompts for `chatbot_rag`, `chatbot_rag_app`, and `rummipoker` Codex sessions to produce portfolio screenshots.
+- Source PDFs and supplemental links listed in this document.
+
+## GSTACK REVIEW REPORT
+
+| Review | Trigger | Why | Runs | Status | Findings |
+|--------|---------|-----|------|--------|----------|
+| CEO Review | `/plan-ceo-review` | Scope & strategy | 0 | - | Not run in this phase |
+| Codex Review | `/codex review` | Independent 2nd opinion | 0 | - | Not run |
+| Eng Review | `/plan-eng-review` | Architecture & tests (required) | 0 | - | Not run yet |
+| Design Review | `/plan-design-review` | UI/UX gaps | 1 | CLEAR WITH ACCURACY GATE | score: 6/10 -> 9/10, 9 decisions; source verification required before implementation |
+| DX Review | `/plan-devex-review` | Developer experience gaps | 0 | - | Not run |
+
+- **UNRESOLVED:** 0 design decisions remain open for the current planning scope.
+- **VERDICT:** DESIGN CLEARED for showcase implementation only after the information accuracy audit. Eng review is still required before shipping final changes.
