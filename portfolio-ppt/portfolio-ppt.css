@@ -1060,3 +1060,65 @@ p { color: #38455a; font-size: clamp(17px, 1.55vw, 23px); font-weight: 720; line
     margin-bottom: -20%;
   }
 }
+
+/* Force 80% visual scale for the web deck. */
+@media screen {
+  .deck {
+    transform: scale(0.8) !important;
+    transform-origin: top center !important;
+    width: 1600px !important;
+    min-width: 1600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body {
+    min-width: 1280px !important;
+  }
+}
+
+/* Make the outer deck box match the 80% visual scale. */
+@media screen {
+  body {
+    min-width: 0 !important;
+  }
+
+  .deck {
+    width: 1280px !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 36px) !important;
+    transform: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 96px !important;
+  }
+
+  .slide {
+    width: 1280px !important;
+    height: 720px !important;
+    min-width: 1280px !important;
+    min-height: 720px !important;
+    padding: 60px !important;
+  }
+
+  .cover,
+  .summary,
+  .stack,
+  .toc,
+  .app-slide,
+  .rag-slide,
+  .game-slide,
+  .tap-slide,
+  .company-slide,
+  .hardware-slide,
+  .legacy-project-slide,
+  .closing {
+    padding: 60px !important;
+  }
+
+  .chunjae-slide,
+  .rag-architecture {
+    padding-top: 43px !important;
+    padding-bottom: 43px !important;
+  }
+}
