@@ -15,7 +15,7 @@
       <a href="#ai-rag">AI/RAG</a>
       <a href="#skills">기술</a>
       <a href="#career">경력</a>
-      <a href="#links">링크</a>
+      <a href="#links" class="nav-cta">링크</a>
     </nav>
   </header>
 
@@ -26,6 +26,10 @@
         <h1>김택권</h1>
         <p class="name-en">KIM TAEK KWON</p>
         <p class="hero-lead">Flutter 상용 앱 개발 경험을 바탕으로 FastAPI, ML, AI/RAG까지 넓혀가고 있는 모바일 앱 개발자입니다.</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#apps">대표 앱 프로젝트 보기</a>
+          <a class="secondary-action" href="https://github.com/cheng80">GitHub 바로가기</a>
+        </div>
         <div class="contact-line">
           <a href="tel:01026262131">010-2626-2131</a>
           <a href="mailto:cheng80@naver.com">cheng80@naver.com</a>
@@ -33,17 +37,17 @@
         </div>
       </div>
       <div class="hero-summary" aria-label="요약">
-        <div><strong>13년 4개월</strong><span>총 개발 경력</span></div>
-        <div><strong>앱 프로젝트 4종</strong><span>TagDo · HabitCell · GlucoInsight · SyncFlow</span></div>
-        <div><strong>AI/RAG 프로젝트</strong><span>chatbot_rag · FastAPI · ML 교육</span></div>
-        <div><strong>운영·제작 경험</strong><span>Unity 교육 콘텐츠 · 80여종 앱 유지보수</span></div>
+        <div><span>총 개발 경력</span><strong>13년 4개월</strong></div>
+        <div><span>마켓 출시·운영</span><strong>앱 80여종</strong></div>
+        <div><span>개인 앱 프로젝트</span><strong>Flutter 앱 4종</strong></div>
+        <div><span>진행 중인 확장</span><strong>게임 2종 · 챗봇 앱 1종</strong></div>
       </div>
     </section>
 
     <section class="section" id="apps">
       <div class="section-head">
         <p class="eyebrow">Flutter Apps</p>
-        <h2>출시와 출시 준비를 경험한 앱 프로젝트</h2>
+        <h2>기획, 제작, 출시와 운영까지 모두 다룬 앱 프로젝트</h2>
         <p>스토어 등록, GitHub 공개, FastAPI 백엔드 연동, 알림, 다국어, 실시간 동기화까지 프로젝트별로 다뤘습니다.</p>
       </div>
 
@@ -128,26 +132,31 @@
       <div class="section-head">
         <p class="eyebrow">AI/RAG Project</p>
         <h2>관광 질문을 추천 카드로 바꾸는 챗봇 흐름</h2>
-        <p>사용자 질문을 지역, 접근성, 제외 조건으로 해석하고 TourAPI와 저장 자료를 함께 확인해 추천 카드로 보여주는 프로젝트입니다.</p>
+        <p>RAG와 관광 API를 활용해 사용자 조건에 맞는 관광지를 추천 카드로 보여주는 무장애 관광 챗봇입니다.</p>
       </div>
       <div class="ai-showcase">
         <figure class="ai-infographic">
-          <img src="./assets/projects/chatbot-rag/chatbot-rag-process-infographic.png" alt="chatbot_rag 내부 처리 흐름 인포그래픽">
+          <img src="./assets/projects/chatbot-rag/chatbot-rag-process-infographic.png" alt="무장애 관광 챗봇 내부 처리 흐름 인포그래픽">
         </figure>
-        <div class="ai-story">
-          <div class="ai-story-card">
-            <h3>chatbot_rag / chatbot_rag_app</h3>
-            <p>Flutter 앱과 FastAPI 백엔드를 연결해 관광 상담 화면을 구성했습니다. 데모 화면은 샘플/캐시 데이터를 사용합니다.</p>
-            <ul class="flow-list">
-              <li><b>질문 입력</b><span>지역, 접근성 조건, 제외 조건을 분리</span></li>
-              <li><b>TourAPI 확인</b><span>빠른 응답이 가능하면 live 결과를 반영</span></li>
-              <li><b>저장 자료 검색</b><span>ChromaDB와 Markdown 자료로 지연·실패 상황을 보완</span></li>
-              <li><b>추천 카드 표시</b><span>출처와 주의 문구를 함께 제공</span></li>
-            </ul>
-          </div>
-          <figure class="ai-app-shot">
-            <img src="./assets/projects/chatbot-rag/chatbot-rag-app-iphone.png" alt="chatbot_rag_app iPhone 관광 챗봇 화면">
+        <div class="ai-screen-pair">
+          <figure class="ai-web-shot">
+            <img src="./assets/projects/chatbot-rag/chatbot-rag-web-response.png" alt="무장애 관광 챗봇 웹 화면">
           </figure>
+          <figure class="ai-app-shot">
+            <img src="./assets/projects/chatbot-rag/chatbot-rag-app-iphone.png" alt="무장애 관광 챗봇 iPhone 화면">
+          </figure>
+        </div>
+        <div class="ai-story-card">
+          <h3>무장애 관광 챗봇</h3>
+          <p>Flutter 앱과 FastAPI 백엔드를 연결해 관광 상담 화면을 구성했습니다. RAG와 관광 API를 함께 활용합니다.</p>
+          <ul class="flow-list">
+            <li><b>질문 입력</b><span>지역, 접근성 조건, 제외 조건을 분리</span></li>
+            <li><b>TourAPI 확인</b><span>빠른 응답이 가능하면 live 결과를 반영</span></li>
+            <li><b>저장 자료 검색</b><span>ChromaDB와 Markdown 자료로 지연·실패 상황을 보완</span></li>
+            <li><b>추천 카드 표시</b><span>출처와 주의 문구를 함께 제공</span></li>
+          </ul>
+        </div>
+        <div class="ai-story">
           <div class="tag-list">
             <span>FastAPI</span><span>TourAPI</span><span>ChromaDB</span><span>Ollama</span><span>Flutter client</span>
           </div>
@@ -165,18 +174,24 @@
         <h2>게임 프로젝트</h2>
       </div>
       <div class="compact-grid">
-        <article class="work-card">
-          <h3>Rummi Poker</h3>
-          <p>Flutter/Flame 기반 보드형 덱빌딩 로그라이트입니다. BIC 출품과 웹 빌드를 함께 공개했습니다.</p>
-          <div class="tag-list"><span>Flutter</span><span>Flame</span><span>Web build</span></div>
-          <div class="action-row">
-            <a href="https://github.com/cheng80/rummipoker">GitHub</a>
-            <a href="https://bicfest.org/enroll/view/3405">BIC 출품 페이지</a>
-            <a href="https://cheng80.myqnapcloud.com/rummipoker/">Web Demo</a>
+        <article class="work-card game-feature">
+          <div>
+            <h3>Rummi Poker</h3>
+            <p>Flutter/Flame 기반 보드형 덱빌딩 로그라이트입니다. BIC 출품과 웹 빌드를 함께 공개했습니다.</p>
+            <div class="tag-list"><span>Flutter</span><span>Flame</span><span>Web build</span></div>
+            <div class="action-row">
+              <a href="https://github.com/cheng80/rummipoker">GitHub</a>
+              <a href="https://bicfest.org/enroll/view/3405">BIC 출품 페이지</a>
+              <a href="https://cheng80.myqnapcloud.com/rummipoker/">Web Demo</a>
+            </div>
+          </div>
+          <div class="game-shot-pair" aria-label="Rummi Poker 게임 스크린샷">
+            <img src="./assets/projects/rummi-poker/rummi-poker-title.png" alt="Rummi Poker 시작 화면">
+            <img src="./assets/projects/rummi-poker/rummi-poker-run.png" alt="Rummi Poker 플레이 화면">
           </div>
         </article>
-        <article class="work-card with-image">
-          <div>
+        <article class="work-card with-image tap-feature">
+          <div class="tap-copy">
             <h3>순서대로 탭탭</h3>
             <p>무작위 숫자나 알파벳을 빠르게 순서대로 클릭하는 순발력 퍼즐 게임입니다.</p>
             <div class="tag-list"><span>Flutter</span><span>Flame</span><span>Web Demo</span></div>
@@ -230,7 +245,7 @@
     <section class="section" id="career">
       <div class="section-head">
         <p class="eyebrow">Career</p>
-        <h2>교육 콘텐츠와 모바일 앱을 오래 운영해 온 개발 경험</h2>
+        <h2>교육 콘텐츠와 모바일 앱 운영 경험</h2>
       </div>
       <div class="career-list">
         <article>
