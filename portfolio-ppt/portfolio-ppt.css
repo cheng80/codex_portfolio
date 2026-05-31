@@ -1051,3 +1051,12 @@ p { color: #38455a; font-size: clamp(17px, 1.55vw, 23px); font-weight: 720; line
   .legacy-project-slide h2 { font-size: 68px !important; }
   .rag-architecture .slide-kicker { font-size: 20px !important; }
 }
+
+/* Display the fixed 1600x900 deck at 80% scale on screen. */
+@media screen {
+  .deck {
+    transform: scale(0.8);
+    transform-origin: top center;
+    margin-bottom: -20%;
+  }
+}
