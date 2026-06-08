@@ -1122,3 +1122,267 @@ p { color: #38455a; font-size: clamp(17px, 1.55vw, 23px); font-weight: 720; line
     padding-bottom: 43px !important;
   }
 }
+
+/* Slide 14: keep the six Chunjae cards inside the fixed 16:9 canvas. */
+.chunjae-slide {
+  align-content: start !important;
+}
+
+.chunjae-slide .card-gallery.six {
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px 14px !important;
+  margin-top: 14px !important;
+  padding-right: 0 !important;
+}
+
+.chunjae-slide .card-gallery.six article {
+  grid-template-columns: minmax(0, 1fr) 94px !important;
+  grid-template-areas:
+    "image title"
+    "image link" !important;
+  gap: 4px 12px !important;
+  min-width: 0 !important;
+  min-height: 106px !important;
+  padding: 9px 12px !important;
+  overflow: hidden !important;
+}
+
+.chunjae-slide .card-gallery.six img {
+  height: 96px !important;
+  min-width: 0 !important;
+}
+
+.chunjae-slide .card-gallery.six h3 {
+  font-size: 18px !important;
+  line-height: 1.12 !important;
+}
+
+.chunjae-slide .card-gallery.six a {
+  min-height: 30px !important;
+  padding: 6px 9px !important;
+  font-size: 12px !important;
+}
+
+/* Final slide-fit pass: keep all fixed 1280x720 slides clear of page numbers. */
+.summary {
+  align-content: start !important;
+}
+
+.summary .timeline {
+  margin-top: 22px !important;
+}
+
+.summary .timeline article {
+  padding-top: 13px !important;
+  padding-bottom: 13px !important;
+}
+
+#slide-05,
+#slide-07,
+.game-slide,
+.hardware-slide,
+.legacy-project-slide {
+  align-content: start !important;
+}
+
+#slide-05 .phone-board,
+#slide-07 .phone-board {
+  align-self: start !important;
+}
+
+#slide-05 .phone-board img,
+#slide-07 .phone-board img {
+  max-height: 560px !important;
+}
+
+#slide-06 {
+  grid-template-columns: minmax(600px, 1.26fr) minmax(0, 0.74fr) !important;
+}
+
+#slide-06 .phone-board {
+  align-self: start !important;
+}
+
+#slide-06 .phone-board img {
+  max-height: 560px !important;
+}
+
+.rag-architecture {
+  align-content: start !important;
+}
+
+.rag-architecture .slide-kicker {
+  margin-bottom: 10px !important;
+}
+
+.rag-architecture h2 {
+  max-width: 510px !important;
+  margin-bottom: 8px !important;
+  font-size: 56px !important;
+  line-height: 1.02 !important;
+}
+
+.rag-architecture-grid {
+  grid-template-columns: minmax(0, 510px) minmax(0, 1fr) !important;
+  gap: 40px !important;
+  margin-top: -72px !important;
+  align-items: start !important;
+}
+
+.architecture-points {
+  gap: 7px !important;
+  padding-top: 104px !important;
+}
+
+.architecture-intro {
+  padding: 13px 16px !important;
+  font-size: 17px !important;
+  line-height: 1.32 !important;
+}
+
+.architecture-points article {
+  padding: 11px 15px !important;
+}
+
+.architecture-points b {
+  margin-bottom: 3px !important;
+  font-size: 19px !important;
+}
+
+.architecture-points span {
+  font-size: 15px !important;
+  line-height: 1.3 !important;
+}
+
+.rag-diagram {
+  width: min(660px, 100%) !important;
+  justify-self: end !important;
+  margin-top: -84px !important;
+}
+
+.rag-diagram img {
+  height: 600px !important;
+}
+
+.game-slide .game-layout {
+  align-items: start !important;
+}
+
+.game-slide .game-phones img {
+  max-height: 570px !important;
+}
+
+#slide-12 {
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr) !important;
+  gap: 30px !important;
+  align-items: start !important;
+}
+
+#slide-12 .project-copy {
+  max-width: 320px !important;
+}
+
+#slide-12 .project-copy h2 {
+  font-size: 68px !important;
+  line-height: 1.02 !important;
+}
+
+#slide-12 .project-copy p {
+  font-size: 19px !important;
+  line-height: 1.38 !important;
+}
+
+#slide-12 .bullet-grid {
+  margin: 18px 0 !important;
+}
+
+#slide-12 .wide-board {
+  align-self: start !important;
+  width: 100% !important;
+  margin-top: 40px !important;
+  overflow: hidden !important;
+}
+
+#slide-12 .wide-board img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 520px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+.hardware-slide .hardware-layout {
+  align-items: start !important;
+}
+
+.hardware-link-gallery {
+  gap: 12px !important;
+}
+
+.hardware-link-gallery article {
+  gap: 8px !important;
+  padding: 10px !important;
+}
+
+.hardware-link-gallery img {
+  height: 180px !important;
+}
+
+.hardware-link-gallery article:nth-child(3) img {
+  height: 190px !important;
+}
+
+.hardware-link-gallery span {
+  font-size: 16px !important;
+}
+
+.hardware-link-gallery a {
+  min-height: 32px !important;
+  padding: 6px 11px !important;
+}
+
+.legacy-project-grid {
+  width: 100% !important;
+  gap: 10px !important;
+  margin-top: 18px !important;
+}
+
+.legacy-project-grid article {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr) !important;
+  gap: 18px !important;
+  min-height: 130px !important;
+  padding: 10px 12px !important;
+}
+
+.legacy-project-grid img {
+  height: 112px !important;
+}
+
+.legacy-project-grid h3 {
+  margin-bottom: 5px !important;
+  font-size: 22px !important;
+}
+
+.legacy-project-grid p {
+  font-size: 16px !important;
+  line-height: 1.28 !important;
+}
+
+.closing h2 {
+  font-size: 104px !important;
+  line-height: 0.98 !important;
+}
+
+.closing .closing-grid {
+  grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr) !important;
+  gap: 38px !important;
+  align-items: center !important;
+}
+
+.closing p {
+  max-width: 660px !important;
+  font-size: 30px !important;
+  line-height: 1.34 !important;
+}
