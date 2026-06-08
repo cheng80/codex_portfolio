@@ -12,6 +12,7 @@ const outputPdf = path.join(outputDir, '김택권_포트폴리오_16x9.pdf');
 const chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const debugPort = 9331;
 const captureScale = 2;
+const keepRenders = process.env.KEEP_RENDERS === '1';
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -108,22 +109,39 @@ async function main() {
     await send('Runtime.evaluate', {
       expression: `
         document.querySelector('.deck-nav')?.remove();
-        document.documentElement.style.scrollSnapType = 'none';
+        const force = (element, property, value) => element.style.setProperty(property, value, 'important');
+        force(document.documentElement, 'scroll-snap-type', 'none');
+        force(document.documentElement, 'overflow', 'hidden');
+        force(document.documentElement, 'width', '1280px');
+        force(document.documentElement, 'height', '720px');
+        force(document.body, 'margin', '0');
+        force(document.body, 'min-width', '0');
+        force(document.body, 'width', '1280px');
+        force(document.body, 'height', '720px');
+        force(document.body, 'overflow', 'hidden');
+        force(document.body, 'background', 'white');
+        const deck = document.querySelector('.deck');
+        force(deck, 'display', 'block');
+        force(deck, 'width', '1280px');
+        force(deck, 'min-width', '1280px');
+        force(deck, 'max-width', 'none');
+        force(deck, 'height', '720px');
+        force(deck, 'margin', '0');
+        force(deck, 'padding', '0');
+        force(deck, 'transform', 'none');
+        window.__portfolioSlideHtml = [...document.querySelectorAll('.slide')].map((slide) => ({
+          id: slide.id,
+          html: slide.outerHTML
+        }));
       `,
     });
 
     const slideInfo = await send('Runtime.evaluate', {
       expression: `
-        [...document.querySelectorAll('.slide')].map((slide, index) => {
-          const rect = slide.getBoundingClientRect();
-          return {
-            id: slide.id || String(index + 1),
-            x: rect.x,
-            y: rect.y,
-            width: rect.width,
-            height: rect.height
-          };
-        })
+        window.__portfolioSlideHtml.map((slide, index) => ({
+          id: slide.id || String(index + 1),
+          index
+        }))
       `,
       returnByValue: true,
     });
@@ -131,15 +149,50 @@ async function main() {
     const slides = slideInfo.result.result.value;
     for (let i = 0; i < slides.length; i += 1) {
       const slide = slides[i];
+      await send('Runtime.evaluate', {
+        expression: `
+          (async () => {
+          const force = (element, property, value) => element.style.setProperty(property, value, 'important');
+          const slideData = window.__portfolioSlideHtml[${slide.index}];
+          document.body.innerHTML = '<main class="deck">' + slideData.html + '</main>';
+          const deck = document.querySelector('.deck');
+          force(deck, 'display', 'block');
+          force(deck, 'width', '1280px');
+          force(deck, 'min-width', '1280px');
+          force(deck, 'max-width', 'none');
+          force(deck, 'height', '720px');
+          force(deck, 'margin', '0');
+          force(deck, 'padding', '0');
+          force(deck, 'transform', 'none');
+          const slide = document.querySelector('.slide');
+          force(slide, 'display', 'grid');
+          force(slide, 'width', '1280px');
+          force(slide, 'height', '720px');
+          force(slide, 'min-width', '1280px');
+          force(slide, 'min-height', '720px');
+          force(slide, 'margin', '0');
+          scrollTo(0, 0);
+          await Promise.all([...document.images].map((image) => {
+            if (image.complete) return Promise.resolve();
+            return new Promise((resolve) => {
+              image.onload = resolve;
+              image.onerror = resolve;
+            });
+          }));
+          })();
+        `,
+        awaitPromise: true,
+      });
+      await wait(100);
       const shot = await send('Page.captureScreenshot', {
         format: 'png',
         fromSurface: true,
         captureBeyondViewport: true,
         clip: {
-          x: slide.x,
-          y: slide.y,
-          width: slide.width,
-          height: slide.height,
+          x: 0,
+          y: 0,
+          width: 1280,
+          height: 720,
           scale: captureScale,
         },
       });
@@ -176,7 +229,9 @@ first, rest = images[0], images[1:]
 first.save(output_pdf, "PDF", save_all=True, append_images=rest, resolution=96.0)
 print(f"Wrote {output_pdf} ({len(images)} pages)")
 `]);
-    await rm(renderDir, { recursive: true, force: true });
+    if (!keepRenders) {
+      await rm(renderDir, { recursive: true, force: true });
+    }
   } finally {
     chrome.kill('SIGTERM');
   }
