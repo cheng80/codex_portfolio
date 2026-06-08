@@ -171,6 +171,9 @@ async function main() {
           force(slide, 'min-width', '1280px');
           force(slide, 'min-height', '720px');
           force(slide, 'margin', '0');
+          force(slide, 'border', '0');
+          force(slide, 'border-radius', '0');
+          force(slide, 'box-shadow', 'none');
           scrollTo(0, 0);
           await Promise.all([...document.images].map((image) => {
             if (image.complete) return Promise.resolve();
