@@ -1377,13 +1377,34 @@ p { color: #38455a; font-size: clamp(17px, 1.55vw, 23px); font-weight: 720; line
 }
 
 .closing .closing-grid {
-  grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr) !important;
-  gap: 38px !important;
+  grid-template-columns: 1fr !important;
+  gap: 34px !important;
   align-items: center !important;
+  justify-items: center;
+  text-align: center;
+}
+
+.closing .slide-kicker {
+  position: absolute;
+  top: 76px;
+  left: 76px;
 }
 
 .closing p {
-  max-width: 660px !important;
+  max-width: 760px !important;
+  margin: 0 auto;
   font-size: 30px !important;
   line-height: 1.34 !important;
+}
+
+.closing .final-link-panel {
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.closing .final-link-panel span {
+  font-size: 12px !important;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
