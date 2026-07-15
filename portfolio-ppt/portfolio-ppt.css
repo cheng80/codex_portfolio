@@ -152,6 +152,7 @@ p { color: #38455a; font-size: clamp(17px, 1.55vw, 23px); font-weight: 720; line
 
 .title-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr); gap: 42px; align-items: end; }
 .title-row.compact { align-items: start; }
+.summary .title-row { grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr); }
 .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
 .metric-grid article { min-height: 148px; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: white; box-shadow: 0 16px 36px rgba(10, 22, 43, 0.08); }
 .metric-grid b { display: block; margin-bottom: 12px; color: var(--red); font-size: clamp(32px, 4vw, 58px); line-height: 1; letter-spacing: -0.05em; }
@@ -193,8 +194,8 @@ p { color: #38455a; font-size: clamp(17px, 1.55vw, 23px); font-weight: 720; line
 }
 
 .syncflow-slide {
-  grid-template-columns: minmax(650px, 1.08fr) minmax(0, 0.92fr);
-  gap: 34px;
+  grid-template-columns: minmax(600px, 1fr) minmax(0, 1fr);
+  gap: 24px;
 }
 
 .syncflow-slide .project-copy p {
